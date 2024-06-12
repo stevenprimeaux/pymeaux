@@ -1,3 +1,3 @@
-from pymeaux.leet.solution import Solution
+import pymeaux.leet.leet_win
 
-Solution().findMaxAverage([1, 12, -5, -6, 50, 3], 4)
+print(pymeaux.leet.leet_win.max_ones([], 0))
