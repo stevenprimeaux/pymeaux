@@ -27,3 +27,6 @@ testpaths = ["tests"]
 [tool.coverage.run]
 branch = true
 source = ["pymeaux"]
+omit = [
+  "src/pymeaux/leet/solution.py"
+]
