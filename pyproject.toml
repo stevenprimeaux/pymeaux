@@ -28,5 +28,6 @@ testpaths = ["tests"]
 branch = true
 source = ["pymeaux"]
 omit = [
-  "src/pymeaux/leet/solution.py"
+  "src/pymeaux/leet/solution.py",
+  "*/__init__.py"
 ]

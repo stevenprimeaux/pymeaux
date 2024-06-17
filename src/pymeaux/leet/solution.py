@@ -9,7 +9,11 @@ class Solution:
 
     # 1004
     def longestOnes(self, nums: List[int], k: int) -> int:
-        return leet_list.long_ones(nums, k)
+        return leet_list.max_ones(nums, k)
+
+    # 1413
+    def minStartValue(self, nums: List[int]) -> int:
+        return leet_list.min_start(nums)
 
     # 1480
     def runningSum(self, nums: List[int]) -> List[int]:

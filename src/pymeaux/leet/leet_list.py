@@ -1,25 +1,6 @@
 from typing import List
 
 
-def long_ones(nums: List[int], k: int) -> int:
-    max_ones = 0
-    count_zeros = 0
-
-    idx_l = 0
-    for idx_r in range(len(nums)):
-        if nums[idx_r] == 0:
-            count_zeros += 1
-
-        while count_zeros > k:
-            if nums[idx_l] == 0:
-                count_zeros -= 1
-            idx_l += 1
-
-        max_ones = max(max_ones, idx_r - idx_l + 1)
-
-    return max_ones
-
-
 def max_avg_cum(nums: List[int], k: int) -> float:
     sums_cum = [0] * len(nums)
     sums_cum[0] = nums[0]
@@ -41,6 +22,36 @@ def max_avg_slide(nums: List[int], k: int) -> float:
         max_sum = max(max_sum, sum_current)
 
     return max_sum / k
+
+
+def max_ones(nums: List[int], k: int) -> int:
+    max_ones = 0
+    count_zeros = 0
+
+    idx_l = 0
+    for idx_r in range(len(nums)):
+        if nums[idx_r] == 0:
+            count_zeros += 1
+
+        while count_zeros > k:
+            if nums[idx_l] == 0:
+                count_zeros -= 1
+            idx_l += 1
+
+        max_ones = max(max_ones, idx_r - idx_l + 1)
+
+    return max_ones
+
+
+def min_start(nums: List[int]) -> int:
+    min_current = 0
+
+    sum_current = 0
+    for n in nums:
+        sum_current += n
+        min_current = min(sum_current, min_current)
+
+    return 1 - min_current
 
 
 def sort_squares(nums: List[int]) -> List[int]:
